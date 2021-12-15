@@ -37,7 +37,7 @@ module.exports = {
   *
   * @param {object} webpackConfig
   */
-  extends (webpackConfig) {
+  extends(webpackConfig) {
     webpackConfig.module.rules = [
       {
         enforce: 'pre',
