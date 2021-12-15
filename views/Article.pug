@@ -1,0 +1,76 @@
+div.article-list
+  s_article_rep
+    include Article/Index
+    include Article/Entry
+.page-load-status
+  .loader-ellips.infinite-scroll-request
+    span.loader-ellips__dot
+    span.loader-ellips__dot
+    span.loader-ellips__dot
+    span.loader-ellips__dot
+  p.infinite-scroll-last End of content
+  p.infinite-scroll-error No more pages to load
+
+style.
+  .article-list {
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    clear: both;
+  }
+  .page-load-status {
+    display: none;
+    padding-top: 20px;
+    border-top: 1px solid var(--color-border);
+    text-align: center;
+    color: var(--color-blur);
+  }
+  .loader-ellips {
+    font-size: 20px;
+    position: relative;
+    width: 4em;
+    height: 1em;
+    margin: 10px auto;
+  }
+  .loader-ellips__dot {
+    display: block;
+    width: 1em;
+    height: 1em;
+    border-radius: 0.5em;
+    background: var(--color-blur);
+    position: absolute;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+  }
+  .loader-ellips__dot:nth-child(1),
+  .loader-ellips__dot:nth-child(2) {
+    left: 0;
+  }
+  .loader-ellips__dot:nth-child(3) { left: 1.5em; }
+  .loader-ellips__dot:nth-child(4) { left: 3em; }
+  @keyframes reveal {
+    from { transform: scale(0.001); }
+    to { transform: scale(1); }
+  }
+
+  @keyframes slide {
+    to { transform: translateX(1.5em) }
+  }
+
+  .loader-ellips__dot:nth-child(1) {
+    animation-name: reveal;
+  }
+
+  .loader-ellips__dot:nth-child(2),
+  .loader-ellips__dot:nth-child(3) {
+    animation-name: slide;
+  }
+
+  .loader-ellips__dot:nth-child(4) {
+    animation-name: reveal;
+    animation-direction: reverse;
+  }
+  

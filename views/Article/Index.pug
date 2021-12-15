@@ -1,0 +1,97 @@
+s_index_article_rep
+  div.article-list-item
+    s_article_rep_thumbnail
+      img(src='[##_article_rep_thumbnail_url_##]')
+    p
+      a(href="[##_article_rep_category_link_##]") [##_article_rep_category_##]
+      span.date [##_article_rep_date_year_##].[##_article_rep_date_month_##].[##_article_rep_date_day_##].
+    h2
+      a(href="[##_article_rep_link_##]") [##_article_rep_title_##]
+
+
+style.
+  .article-list-item {
+    width: calc(25% - 1rem - 4px);
+    box-sizing: border-box;
+    display: block;
+    border-radius: 2px;
+    margin: 0.5rem;
+    border: var(--color-border) solid 1px;
+  }
+  @media screen and (max-width: 900px) {
+    .article-list-item { width: calc(50% - 1em - 4px);} 
+  }
+  @media screen and (max-width: 500px) {
+    .article-list-item { width: calc(100% - 1em - 4px);} 
+  }
+  .article-list-item > h2 {
+    font-weight: normal;
+    font-size: 1.3rem;
+    padding: 0 0.3em;
+    word-break: break-all;
+    line-height: 1.6rem;
+    margin-bottom: 2rem;
+  }
+  .article-list-item > img ~ h2 {
+    margin-bottom: 1rem;
+  }
+  .article-list-item > h2 a {
+    color: var(--color-blur);
+    text-decoration: none;
+  }
+  .article-list-item > h2 a:hover {
+    color: var(--color);
+  }
+  .article-list-item > img {
+    width: 100%;
+    display: block;
+  }
+  .article-list-item > p {
+    color: var(--color-blur);
+    padding: 0 0.3em;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin-top: 2.2rem;
+    margin-bottom: 0.3rem;
+  }
+  .article-list-item > img ~ p {
+    margin-top: 0.3rem;
+  }
+  .article-list-item > p .date {
+    display: inline-block;
+    align-self: flex-end;
+  }
+  .article-list-item > p a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--color);
+  }
+
+
+script.
+  var has_init_masonry = false;
+  if ($('#tt-body-index').length > 0 || $('#tt-body-category').length > 0 || $('#tt-body-tag').length > 0) {
+    var $grid = $('.article-list').masonry({
+        itemSelector: '.article-list-item',
+        columnWidth: '.article-list-item',
+        percentPosition: true,
+        visibleStyle: { transform: 'translateY(0)', opacity: 1 },
+        hiddenStyle: { transform: 'translateY(100px)', opacity: 0 },
+    });
+    var msnry = $grid.data('masonry');
+    $grid.imagesLoaded(() => {
+      if (has_init_masonry) {
+        var $items = $grid.find('.article-list-item');
+        $grid.masonry('appended', $items );
+      } else {
+        $grid.masonry('layout');
+      }
+    });
+    $grid.infiniteScroll({
+      path: 'a.next-page',
+      append: '.article-list-item',
+      status: '.page-load-status',
+      outlayer: msnry,
+    });
+  }

@@ -15,6 +15,5 @@ jobs:
         with:
           node-version: 12
       - run: npm install --no-optional
-      - run: npm run lint
 
       - run: npm run production

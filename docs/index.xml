@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <skin>
    <information>
-      <name>TIDORY</name>
+      <name>Simple Skin by TIDORY</name>
       <version>1.0</version>
       <description>
-         <![CDATA[티스토리 프레임워크, 티도리(TIDORY)]]>
+         <![CDATA[티도리(TIDORY)로 개발한 단순한 스킨]]>
       </description>
       <license>
          <![CDATA[MIT]]>
       </license>
    </information>
    <author>
-      <name>SangWoo Jeong</name>
-      <homepage>http://www.tidory.com</homepage>
-      <email>pronist@naver.com</email>
+      <name>soma0sd</name>
+      <homepage>https://soma0sd.tistory.com/</homepage>
+      <email>soma0sd@gmail.com</email>
    </author>
 </skin>

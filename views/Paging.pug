@@ -1,0 +1,19 @@
+s_paging [##_revenue_list_lower_##]
+  .paging
+    a([##_prev_page_##] class="[##_no_more_prev_##] prev-page") ◀ PREV
+    a([##_next_page_##] class="[##_no_more_next_##] next-page") NEXT ▶
+
+style.
+  .paging,
+  .paging > a {
+    color: var(--color);
+    text-decoration: none;
+  }
+  .paging {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 1em;
+    max-width: 750px;
+    margin: auto;
+  }

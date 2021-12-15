@@ -1,0 +1,27 @@
+s_tag
+  ul.tags
+    s_tag_rep
+      li.tag-item
+        a(href="[##_tag_link_##]" class="[##_tag_class_##]") [##_tag_name_##]
+
+style.
+  #tt-body-tag ul.tags {
+    list-style: none;
+    color: var(--color);
+    max-width: 750px;
+    margin: auto;
+  }
+  #tt-body-tag a {text-decoration: none;}
+  #tt-body-tag a.cloud1 {font-size: 2.0rem; color: var(--color-cloud1)}
+  #tt-body-tag a.cloud2 {font-size: 1.8rem; color: var(--color-cloud2)}
+  #tt-body-tag a.cloud3 {font-size: 1.6rem; color: var(--color-cloud3)}
+  #tt-body-tag a.cloud4 {font-size: 1.4rem; color: var(--color-cloud4)}
+  #tt-body-tag a.cloud5 {font-size: 1.2rem; color: var(--color-cloud5)}
+
+script.
+  $("ul.tags").masonry({
+    itemSelector: '.tag-item',
+    columnWidth: 15,
+    gutter: 10
+  });
+  

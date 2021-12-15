@@ -1,0 +1,26 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "deploy",
+			"problemMatcher": [],
+			"label": "npm: deploy",
+			"detail": "tidory deploy",
+			"dependsOn": [
+				"npm: production"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		},
+		{
+			"type": "npm",
+			"script": "production",
+			"problemMatcher": [],
+			"label": "npm: production",
+			"detail": "tidory production"
+		}
+	]
+}

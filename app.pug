@@ -7,20 +7,53 @@ html(lang="ko")
 
     title [##_page_title_##]
 
-    link(rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosanskr.css")
+    link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&family=Noto+Sans+KR:wght@300;400;700&display=swap")
+    
+    script(src="https://code.jquery.com/jquery-3.6.0.min.js")
+    script(src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js")
+    script(src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js")
+    script(src="https://unpkg.com/infinite-scroll@4/dist/infinite-scroll.pkgd.min.js")
+
+    link(rel="stylesheet" media="(prefers-color-scheme: light)" href="https://unpkg.com/highlight.js@11.3.1/styles/github.css")
+    link(rel="stylesheet" media="(prefers-color-scheme: dark)" href="https://unpkg.com/highlight.js@11.3.1/styles/github-dark.css")
+    script(src="https://unpkg.com/@highlightjs/cdn-assets@11.3.1/highlight.min.js")
+    script hljs.highlightAll();
+
+    link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css")
+    script(defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js")
+    script(defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);") 
 
     style.
       /* Color Palette */
       :root {
         --color-background: white;
         --color: black;
-        --color-blur: rgba(0, 0, 0, .6)
+        --color-blur: rgba(0, 0, 0, .6);
+        --color-border: rgba(0, 0, 0, .3);
+        --color-href: #00897B;
+        --color-box: #E1BEE7;
+        --color-box: #80CBC4;
+        --color-box-href: #D84315;
+        --color-cloud1: #F57C00;
+        --color-cloud2: #FFB300;
+        --color-cloud3: #FFEB3B;
+        --color-cloud4: #D4E157;
+        --color-cloud5: #AED581;
       }
       @media (prefers-color-scheme: dark) {
         :root {
           --color-background: #1e1f21;
           --color: white;
-          --color-blur: rgba(255, 255, 255, .8)
+          --color-blur: rgba(255, 255, 255, .8);
+          --color-border: rgba(255, 255, 255, .55);
+          --color-href: #80CBC4;
+          --color-box: #00695C;
+          --color-box-href: #009688;
+          --color-cloud1: #EF9A9A;
+          --color-cloud2: #F06292;
+          --color-cloud3: #AB47BC;
+          --color-cloud4: #673AB7;
+          --color-cloud5: #3949AB;
         }
       }
 
@@ -29,6 +62,9 @@ html(lang="ko")
         padding: 0px;
         margin: 0px;
         font-family: "Noto Sans KR", sans-serif;
+      }
+      code {
+        font-family: 'Nanum Gothic Coding', monospace;
       }
       a {
         pointer-events: initial;
