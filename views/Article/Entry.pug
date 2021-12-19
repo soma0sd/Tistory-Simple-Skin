@@ -11,7 +11,7 @@ s_permalink_article_rep
 
 style.
   article {
-    color: var(--color);
+    color: var(--color-high);
     padding: 1em 2em;
     max-width: 750px;
     margin: auto;
@@ -21,17 +21,17 @@ style.
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    color: var(--color-blur);
+    color: var(--color-medium);
   }
   article > .meta a {
     display: inline-block;
     text-decoration: none;
-    color: var(--color-blur);
+    color: var(--color-medium);
   }
   article > .tags a {
     display: inline-block;
     text-decoration: none;
-    color: var(--color-blur);
+    color: var(--color-medium);
   }
   article > .tags a::before {
     content: "#";
@@ -46,16 +46,16 @@ style.
     margin-bottom: 0.6em;
   }
   article > .body kbd {
+    margin: 0 0.1rem;
+    padding: 0.0rem 0.3rem 0.15rem 0.3rem;
+    line-height: 1.3em;
+    border-radius: 4px;
     font-weight: bold;
     font-size: 0.8em;
     vertical-align: middle;
-    margin: 0 0.3rem;
     border: 1px solid var(--color-background);
-    border-radius: 4px;
+    box-shadow: 1px 1px 2px var(--color-disabled);
     display: inline-block;
-    padding: 1px 8px;
-    background: linear-gradient(178deg, var(--color-background), var(--color-background), var(--color-background), var(--color-border));
-    box-shadow: 1px 1px 2px #777;
   }
   article > .body p {
     line-height: 2em;
@@ -63,26 +63,27 @@ style.
   }
   article > .body p code {
     display: inline-block;
-    background-color: var(--color-border);
+    background-color: var(--color-box);
     padding: 0.0rem 0.3rem 0.15rem 0.3rem;
-    height: 1.65em;
+    line-height: 1.3em;
   }
   article > .body p a,
   article > .body li a {
-    color: var(--color-href);
+    color: var(--color-link);
   }
   article > .body ul,
   article > .body ol {
     margin-left: 1.5em;
   }
   article > .body blockquote {
-    background-color: var(--color-box);
+    background-color: var(--color-blockquote);
+    color: var(--color-high);
     padding: 0.5rem 1rem;
     border-radius: 0.2rem;
     margin: 1em 0 !important;
   }
   article > .body blockquote p {
-    color: var(--color-blur);
+    color: var(--color-medium);
   }
   article > .body pre {
     margin-top: 1em;
@@ -96,7 +97,7 @@ style.
     color: var(--color);
   }
   article > .body .fileblock .size {
-    color: var(--color-blur) !important;
+    color: var(--color-medium) !important;
   }
   @media (prefers-color-scheme: dark) {
     article > .body .fileblock .image {
