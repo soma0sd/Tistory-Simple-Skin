@@ -70,8 +70,12 @@ style.
 
 
 script.
+  // 포스트 목록 정렬 및 무한스크롤
   var has_init_masonry = false;
-  if ($('#tt-body-index').length > 0 || $('#tt-body-category').length > 0 || $('#tt-body-tag').length > 0) {
+  if ($('#tt-body-index').length > 0
+      || $('#tt-body-category').length > 0
+      || ($('#tt-body-tag').length > 0 && !$('ul.tags').lenth > 0)) {
+    // 핀터레스트 방식 정렬
     var $grid = $('.article-list').masonry({
         itemSelector: '.article-list-item',
         columnWidth: '.article-list-item',
@@ -80,6 +84,7 @@ script.
         hiddenStyle: { transform: 'translateY(100px)', opacity: 0 },
     });
     var msnry = $grid.data('masonry');
+    // 이미지 로드 후 정렬
     $grid.imagesLoaded(() => {
       if (has_init_masonry) {
         var $items = $grid.find('.article-list-item');
@@ -88,6 +93,7 @@ script.
         $grid.masonry('layout');
       }
     });
+    // 무한스크롤
     $grid.infiniteScroll({
       path: 'a.next-page',
       append: '.article-list-item',
