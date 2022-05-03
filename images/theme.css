@@ -1,0 +1,54 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Nanum+Gothic+Coding:wght@400;700&family=Nanum+Gothic:wght@400;700&display=swap");
+body {
+  font-family: "Nanum Gothic", sans-serif;
+}
+
+code {
+  font-family: "Fira Code", "Nanum Gothic Coding", monospace;
+}
+
+body {
+  background-color: #121212;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+h1 {
+  color: rgba(255, 255, 255, 0.87);
+  margin: 0;
+}
+
+header {
+  text-align: center;
+  padding-top: 1.5rem;
+  border-bottom: rgba(255, 255, 255, 0.12) 2px solid;
+}
+header a {
+  color: rgba(255, 255, 255, 0.87);
+  text-decoration: none;
+}
+
+nav {
+  font-size: 1.3em;
+  width: 700px;
+  margin: auto;
+}
+nav ul {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+nav li {
+  padding: 0 0.3rem;
+}
+nav a {
+  display: inline-block;
+  padding: 0.3rem;
+}
+nav #blog-category .link_tit {
+  display: none;
+}
+
+/*# sourceMappingURL=theme.css.map */
