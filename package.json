@@ -5,25 +5,31 @@
     "production": "tidory production",
     "store": "tidory store",
     "deploy": "tidory deploy",
-    "lint": "eslint --ext .js --ignore-path .gitignore . && pug-lint ."
+    "tsc-watch": "node_modules/.bin/tsc -w",
+    "sass-watch": "node_modules/.bin/sass --watch sass/style.scss images/theme.css",
+    "lint": "eslint --ext .js --ignore-path .gitignore . && pug-lint .",
+    "dev": "concurrently \"npm run preview\" \"npm run tsc-watch\" \"npm run sass-watch\""
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tidory/tidory"
+    "url": "https://github.com/soma0sd/Tistory-Simple-Skin"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
-    "eslint-config-standard": "^14.1.1",
+    "eslint-config-standard": "^17.0.0",
     "eslint-loader": "^4.0.0",
-    "eslint-plugin-import": "^2.23.3",
+    "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-standard": "^5.0.0",
-    "pug-lint": "^2.6.0"
+    "pug-lint": "^2.6.0",
+    "sass": "^1.51.0",
+    "typescript": "^4.6.4"
   },
   "dependencies": {
-    "autoprefixer": "^6.7.7",
+    "autoprefixer": "^10.4.7",
+    "concurrently": "^7.1.0",
     "tidory": "^8.0.5"
   }
 }
