@@ -1,0 +1,82 @@
+@import "variable";
+
+nav {
+    max-width: $desktop-width;
+    font-size: 1.3em;
+    margin: auto;
+    ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    li {
+        padding: 0 0.3rem;
+        margin: 0;
+    }
+    a {
+        display: inline-block;
+        padding: 0.3rem;
+    }
+}
+
+header {
+    padding-top: 1.5rem;
+    a {
+        color: nth($text-color, 1);
+        text-decoration: none;
+    }
+    #blog-title {
+        text-align: center;
+    }
+    #blog-menu {
+        margin-bottom: 1.5rem;
+        & > ul {
+            justify-content: center;
+        }
+    }
+    #blog-category {
+        ul {
+            margin-bottom: 0.5rem;
+        }
+        .sub_category_list {
+            display: none;
+            margin: 0;
+        }
+        .link_tit {
+            display: none;
+        }
+        .link_item .c_cnt {
+            display: none;
+        }
+        .link_item {
+            color: nth($text-color, 1);
+        }
+        .link_item.disable {
+            color: nth($text-color, 3);
+        }
+    }
+    #blog-category-sub {
+        margin-bottom: 1.5rem;
+        font-size: 0.9em;
+        line-height: 0.9rem;
+        li {
+            display: none;
+            background-color: nth($box-background, 1);
+            padding: 0.2rem 1rem 0.2rem 1rem;
+        }
+        li:first-child {
+            border-top-left-radius: 2px;
+            border-bottom-left-radius: 2px;
+        }
+        li:last-child {
+            border-top-right-radius: 2px;
+            border-bottom-right-radius: 2px;
+        }
+        li.active {
+            display: block;
+        }
+    }
+}
+

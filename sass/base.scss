@@ -1,0 +1,11 @@
+@import "variable";
+
+body {
+    background-color: nth($background-color, 1);
+    color: nth($text-color, 2);
+}
+
+h1 {
+    color: nth($text-color, 1);
+    margin: 0;
+}

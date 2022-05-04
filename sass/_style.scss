@@ -1,0 +1,14 @@
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Nanum+Gothic+Coding:wght@400;700&family=Nanum+Gothic:wght@400;700&display=swap');
+
+
+// fonts
+body {font-family: 'Nanum Gothic', sans-serif;}
+code {font-family: 'Fira Code', 'Nanum Gothic Coding', monospace;}
+
+
+@import "base";
+@import "header";
+@import "article/index";
+@import "article/entry";
