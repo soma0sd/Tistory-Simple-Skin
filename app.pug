@@ -3,78 +3,20 @@ doctype html
 html(lang="ko")
   head
     meta(charset="utf-8")
-    meta(name="viewport" content="width=device-width, initial-scale=1")
-
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
     title [##_page_title_##]
 
-    link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&family=Noto+Sans+KR:wght@300;400;700&display=swap")
-    
-    script(src="https://code.jquery.com/jquery-3.6.0.min.js")
-    script(src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js")
-    script(src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js")
-    script(src="https://unpkg.com/infinite-scroll@4/dist/infinite-scroll.pkgd.min.js")
-
-    link(rel="stylesheet" media="(prefers-color-scheme: light)" href="https://unpkg.com/highlight.js@11.3.1/styles/github.css")
-    link(rel="stylesheet" media="(prefers-color-scheme: dark)" href="https://unpkg.com/highlight.js@11.3.1/styles/github-dark.css")
-    script(src="https://unpkg.com/@highlightjs/cdn-assets@11.3.1/highlight.min.js")
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github-dark.min.css")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js")
     script hljs.highlightAll();
 
-    link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css")
-    script(defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js")
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.15.3/katex.min.css")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.15.3/katex.min.js")
     script(defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);") 
 
-    style.
-      /* Color Palette */
-      :root {
-        --color-background: #ECEFF1;
-        --color-high: rgba(0, 0, 0, .87);
-        --color-medium: rgba(0, 0, 0, .60);
-        --color-disabled: rgba(0, 0, 0, .38);
-        --color-box: rgba(0, 0, 0, .12);
-        --color-button: #80CBC4; /* Teal 200 */
-        --color-link: #00897B; /* Teal 600 */
-        --color-blockquote: #B2DFDB; /* Teal 100 */
-
-        --color-cloud1: #F57C00;
-        --color-cloud2: #FFB300;
-        --color-cloud3: #FFEB3B;
-        --color-cloud4: #D4E157;
-        --color-cloud5: #AED581;
-      }
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --background-color: #263238;
-          --color-high: rgba(255, 255, 255, .87);
-          --color-medium: rgba(255, 255, 255, .60);
-          --color-disabled: rgba(255, 255, 255, .38);
-          --color-box: rgba(255, 255, 255, .12);
-          --color-button: #00796B; /* Teal 700 */
-          --color-link: #4DB6AC; /* Teal 300 */
-          --color-blockquote: #00695C; /* Teal 800 */
-
-          --color-cloud1: #EF9A9A;
-          --color-cloud2: #F06292;
-          --color-cloud3: #AB47BC;
-          --color-cloud4: #673AB7;
-          --color-cloud5: #3949AB;
-        }
-      }
-
-    style.
-      * {
-        padding: 0px;
-        margin: 0px;
-        font-family: "Noto Sans KR", sans-serif;
-      }
-      code {
-        font-family: 'Nanum Gothic Coding', monospace;
-      }
-      a {
-        pointer-events: initial;
-      }
-      body {
-        background-color: var(--background-color);
-      }
+    link(rel="stylesheet" href="./images/theme.css")
+    script(defer src="./images/postProcess.js")
+    script(src="./images/preprocess.js")
 
   body(id="[##_body_id_##]")
     block TIDORY
