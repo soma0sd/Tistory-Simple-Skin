@@ -6,7 +6,7 @@
     "store": "tidory store",
     "deploy": "tidory deploy",
     "tsc-watch": "node_modules/.bin/tsc -w",
-    "sass-watch": "node_modules/.bin/sass --watch sass/style.scss images/theme.css",
+    "sass-watch": "node_modules/.bin/sass --watch sass/_style.scss images/theme.css",
     "lint": "eslint --ext .js --ignore-path .gitignore . && pug-lint .",
     "dev": "concurrently \"npm run preview\" \"npm run tsc-watch\" \"npm run sass-watch\""
   },

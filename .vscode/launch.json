@@ -5,8 +5,8 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "command": "npm run preview",
             "name": "Run npm Preview",
+            "command": "npm run dev",
             "request": "launch",
             "type": "node-terminal"
         },
