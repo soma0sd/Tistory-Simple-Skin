@@ -1,0 +1,23 @@
+@import "variable";
+
+$tags-color:#EF5350 #E91E63 #1E88E5 #00ACC1 #00897B;
+
+#tt-body-tag {
+    ul.tags {
+        list-style: none;
+        max-width: 750px;
+        margin: auto;
+        padding: 0;
+    }
+    li.tag-item {
+        padding: 0.2rem 0.5rem;
+        border-radius: 2px;
+        display: inline-block;
+    }
+    a {text-decoration: none;}
+    a.cloud1 {font-size: 2.5em; font-weight: bold; color: nth($tags-color, 1);}
+    a.cloud2 {font-size: 2.0em; font-weight: bold; color: nth($tags-color, 2);}
+    a.cloud3 {font-size: 1.8em; color: nth($tags-color, 3);}
+    a.cloud4 {font-size: 1.5em; color: nth($tags-color, 4);}
+    a.cloud5 {font-size: 1.3em; color: nth($tags-color, 5);}
+}
