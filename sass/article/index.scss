@@ -9,17 +9,17 @@
 
 .article-list-item {
     position: absolute;
-    width: 33.3%;
+    width: calc(100% / 3);
     box-sizing: border-box;
     color: nth($text-color, 2);
     opacity: 0;
     padding: 0.3rem;
     transition: opacity 0.8s ease-in;
     @media (max-width: $desktop-width) {
-        width: 50%;
+        width: calc(100% / 2);
     }
     @media (max-width: $mobile-width) {
-        width: 100%;
+        width: calc(100% / 1);
     }
     &.show {
         opacity: 1;

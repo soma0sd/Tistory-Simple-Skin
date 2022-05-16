@@ -70,6 +70,7 @@ header #blog-category .link_item .c_cnt {
 }
 header #blog-category .link_item {
   color: rgba(255, 255, 255, 0.87);
+  cursor: pointer;
 }
 header #blog-category .link_item.disable {
   color: rgba(255, 255, 255, 0.38);
@@ -96,6 +97,43 @@ header #blog-category-sub li.active {
   display: block;
 }
 
+#tt-body-tag ul.tags {
+  list-style: none;
+  max-width: 750px;
+  margin: auto;
+  padding: 0;
+}
+#tt-body-tag li.tag-item {
+  padding: 0.2rem 0.5rem;
+  border-radius: 2px;
+  display: inline-block;
+}
+#tt-body-tag a {
+  text-decoration: none;
+}
+#tt-body-tag a.cloud1 {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #EF5350;
+}
+#tt-body-tag a.cloud2 {
+  font-size: 2em;
+  font-weight: bold;
+  color: #E91E63;
+}
+#tt-body-tag a.cloud3 {
+  font-size: 1.8em;
+  color: #1E88E5;
+}
+#tt-body-tag a.cloud4 {
+  font-size: 1.5em;
+  color: #00ACC1;
+}
+#tt-body-tag a.cloud5 {
+  font-size: 1.3em;
+  color: #00897B;
+}
+
 .article-list {
   position: relative;
   max-width: 900px;
@@ -105,7 +143,7 @@ header #blog-category-sub li.active {
 
 .article-list-item {
   position: absolute;
-  width: 33.3%;
+  width: 33.3333333333%;
   box-sizing: border-box;
   color: rgba(255, 255, 255, 0.6);
   opacity: 0;
@@ -213,7 +251,11 @@ article > .body blockquote p {
   color: rgba(255, 255, 255, 0.6);
 }
 article > .body ul, article > .body ol {
-  margin-left: 1.5em;
+  margin-left: 0;
+  padding-left: 1.2em;
+}
+article > .body ul li, article > .body ol li {
+  line-height: 1.8;
 }
 article > .body h2, article > .body h3 {
   margin-top: 1em;

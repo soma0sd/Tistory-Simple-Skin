@@ -52,6 +52,7 @@ header {
         }
         .link_item {
             color: nth($text-color, 1);
+            cursor: pointer;
         }
         .link_item.disable {
             color: nth($text-color, 3);
