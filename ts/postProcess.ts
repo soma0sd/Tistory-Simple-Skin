@@ -60,33 +60,36 @@ let conteiner = document.querySelector(".tt_article_useless_p_margin");
 if (conteiner) conteiner.classList.remove("tt_article_useless_p_margin");
 
 // 인덱스 페이지 정렬
-var articleIndexWarp = document.querySelector<HTMLElement>(".article-list");
-
-function articleIndexLayout() {
-  const warpper = document.querySelector<HTMLElement>(".article-list");
-  const firstItem = document.querySelector<HTMLElement>(".article-list-item");
-  const warpperWidth = warpper.offsetWidth;
-  const itemWidth = firstItem.offsetWidth;
-  let layoutTop = new Array(parseInt(`${warpperWidth / itemWidth}`)).fill(0);
-  const setupLayout = async (elem: HTMLElement) => {
-    if (elem.getElementsByTagName("img").length > 0) {
-      let img: HTMLImageElement = elem.querySelector("img");
+function MasonryLayout(listContainerQuery: string, listItemQuery: string) {
+  const elemContainer = document.querySelector<HTMLElement>(listContainerQuery);
+  const elemFirstItem = elemContainer.querySelector<HTMLElement>(listItemQuery);
+  const getArrayMinIndex = (arr: any[]) =>
+    arr.reduce((r, v, i, a) => (v >= a[r] ? r : i), -1);
+  const getArrayMaxIndex = (arr: any[]) =>
+    arr.reduce((r, v, i, a) => (v <= a[r] ? r : i), -1);
+  const waitImageLoad = async (elem: HTMLElement) => {
+    for (const img of elem.querySelectorAll<HTMLImageElement>("img"))
       await img.decode();
-    }
-    let arrIdx = layoutTop.reduce((r, v, i, a) => (v >= a[r] ? r : i), -1);
-    elem.style.left = arrIdx * itemWidth + "px";
-    elem.style.top = layoutTop[arrIdx] + "px";
-    elem.classList.add("show");
-    layoutTop[arrIdx] += elem.offsetHeight;
-    let arrMaxIdx = layoutTop.reduce((r, v, i, a) => (v <= a[r] ? r : i), -1);
-    warpper.style.height = layoutTop[arrMaxIdx] + "px";
   };
-  document
-    .querySelectorAll<HTMLElement>(".article-list-item ")
-    .forEach(async (elem) => {
-      await setupLayout(elem);
-    });
+  const LayoutSetup = async () => {
+    const widthWrapper = elemContainer.offsetWidth;
+    const widthItem = elemFirstItem.offsetWidth;
+    let layoutTopArr = new Array(parseInt(`${widthWrapper / widthItem}`));
+    layoutTopArr.fill(0);
+    for (const elem of elemContainer.querySelectorAll<HTMLElement>(listItemQuery)) {
+      // 이미지 로딩 대기
+      await waitImageLoad(elem);
+      let topMinIndex = getArrayMinIndex(layoutTopArr);
+      elem.style.left = topMinIndex * widthItem + "px";
+      elem.style.top = layoutTopArr[topMinIndex] + "px";
+      elem.classList.add("show");
+      layoutTopArr[topMinIndex] += elem.offsetHeight;
+      elemContainer.style.height =
+        layoutTopArr[getArrayMaxIndex(layoutTopArr)] + "px";
+    }
+  };
+  LayoutSetup();
+  window.addEventListener("resize", LayoutSetup);
 }
 
-articleIndexLayout(); 
-window.onresize = articleIndexLayout;
+MasonryLayout(".article-list", ".article-list-item");
