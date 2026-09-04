@@ -16,20 +16,18 @@
     "url": "https://github.com/soma0sd/Tistory-Simple-Skin"
   },
   "devDependencies": {
-    "eslint": "^6.8.0",
-    "eslint-config-standard": "^17.0.0",
-    "eslint-loader": "^4.0.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^6.0.0",
-    "eslint-plugin-standard": "^5.0.0",
-    "pug-lint": "^2.6.0",
-    "sass": "^1.51.0",
-    "typescript": "^4.6.4"
+    "eslint": "^8.57.1",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-promise": "^6.6.0",
+    "pug-lint": "^2.7.0",
+    "sass": "^1.104.0",
+    "typescript": "^5.9.3"
   },
   "dependencies": {
-    "autoprefixer": "^10.4.7",
-    "concurrently": "^7.1.0",
-    "tidory": "^8.0.5"
+    "autoprefixer": "^10.5.4",
+    "concurrently": "^9.2.4",
+    "tidory": "^8.4.3"
   }
 }
