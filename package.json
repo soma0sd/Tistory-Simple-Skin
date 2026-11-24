@@ -2,6 +2,7 @@
   "scripts": {
     "start": "tidory start",
     "preview": "tidory preview",
+    "preproduction": "node -e \"require('node:fs').mkdirSync('dist/images', { recursive: true })\"",
     "production": "tidory production",
     "store": "tidory store",
     "deploy": "tidory deploy",
